@@ -20,7 +20,7 @@ public class Calculator {
 					customDelimiter = numbers.charAt(2);
 					delimiter += customDelimiter;
 				}
-
+				//TODO do a method with the While for making the code easier to read
 				// loop through the strings tokens and sum up
 				StringTokenizer stringTokenizer = new StringTokenizer(numbers, delimiter);
 
