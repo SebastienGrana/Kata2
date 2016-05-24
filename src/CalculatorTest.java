@@ -10,6 +10,7 @@ public class CalculatorTest {
 	private static final String TWO_TOKEN_STRING = "1,2";
 	private static final String MULTI_TOKEN_STRING = "1,2,3";
 	private static final String MULTI_TOKEN_STRING_WITH_FEED = "1\n2,3";
+	private static final String MULTI_TOKEN_STRING_WITH_CUSTOM_DELIMITER = "//;\n1;2;3";
 	
 	// Calculator object
 	private Calculator calculator;
@@ -52,7 +53,14 @@ public class CalculatorTest {
 	@Test
 	public void testMultiTokenStringWithLineFeed() {
 		int res = calculator.add(MULTI_TOKEN_STRING_WITH_FEED);
-		assertEquals(-1, res);
+		assertEquals(6, res);
+	}
+	
+	//multi token with custom delimiter
+	@Test
+	public void testMultiTokenStringWithCustomDelimiter() {
+		int res = calculator.add(MULTI_TOKEN_STRING_WITH_CUSTOM_DELIMITER);
+		assertEquals(6, res);
 	}
 	
 }
