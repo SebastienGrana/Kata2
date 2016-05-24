@@ -1,27 +1,48 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class CalculatorTest {
+	// Constants to pass to add()
+	private static final String TWO_TOKEN_STRING = "1,2";
+	private static final String MULTI_TOKEN_STRING = "1,2,3";
+	private static final String ONE_TOKEN_STRING = "1";
+	private static final String EMPTY_STRING = "";
+	// Calculator object
+	private Calculator calculator;
 
+	// Initialize Calculator
+	@Before
+	public void setup() {
+		calculator = new Calculator();
+	}
+
+	// empty string
 	@Test
 	public void testEmptyString() {
-		Calculator calc = new Calculator();
-		int res = calc.add("");
-		assertEquals(0,res);
-	}
-	
-	@Test
-	public void testOneString() {
-		Calculator calc = new Calculator();
-		int res = calc.add("1");
-		assertEquals(1,res);
+		int res = calculator.add(EMPTY_STRING);
+		assertEquals(0, res);
 	}
 
+	// one token
 	@Test
-	public void testFullString() {
-		Calculator calc = new Calculator();
-		int res = calc.add("1,2,3");
-		assertEquals(6,res);
+	public void testOneTokenString() {
+		int res = calculator.add(ONE_TOKEN_STRING);
+		assertEquals(1, res);
+	}
+
+	// two tokens
+	@Test
+	public void testTwoTokenString() {
+		int res = calculator.add(TWO_TOKEN_STRING);
+		assertEquals(3, res);
+	}
+
+	// 3 or more tokens
+	@Test
+	public void testMultiTokenString() {
+		int res = calculator.add(MULTI_TOKEN_STRING);
+		assertEquals(6, res);
 	}
 }
