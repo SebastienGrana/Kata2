@@ -8,6 +8,10 @@ public class Calculator {
 		if (numbers.length() == 1) {
 			result = Integer.parseInt(numbers);
 		} else {
+			
+//			if(numbers.contains("\n")){
+//				numbers.replaceAll("\\n", ",");
+//			}
 			//loop through the strings tokens and sum up
 			StringTokenizer stringTokenizer = new StringTokenizer(numbers, ",");
 			
