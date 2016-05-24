@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+
+
 public class CalculatorTest {
 	// Constants to pass to add()
 	private static final String EMPTY_STRING = "";
@@ -14,6 +16,7 @@ public class CalculatorTest {
 	private static final String MULTI_TOKEN_STRING = "1,2,3";
 	private static final String MULTI_TOKEN_STRING_WITH_FEED = "1\n2,3";
 	private static final String MULTI_TOKEN_STRING_WITH_CUSTOM_DELIMITER = "//;\n1;2;3";
+	private static final String MULTI_TOKEN_STRING_WITH_NEGATIVE_NUMBER = "//;\n1;-2;3";
 	
 	// Calculator object
 	private Calculator calculator;
@@ -66,4 +69,10 @@ public class CalculatorTest {
 		assertEquals(6, res);
 	}
 	
+	//multi token with custom delimiter
+	@Test
+	public void testMultiTokenStringWithNegativeNumber() {
+		int res = calculator.add(MULTI_TOKEN_STRING_WITH_NEGATIVE_NUMBER);
+		assertEquals(-1, res);
+	}
 }
