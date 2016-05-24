@@ -5,10 +5,12 @@ import org.junit.Test;
 
 public class CalculatorTest {
 	// Constants to pass to add()
+	private static final String EMPTY_STRING = "";
+	private static final String ONE_TOKEN_STRING = "1";
 	private static final String TWO_TOKEN_STRING = "1,2";
 	private static final String MULTI_TOKEN_STRING = "1,2,3";
-	private static final String ONE_TOKEN_STRING = "1";
-	private static final String EMPTY_STRING = "";
+//	private static final String MULTI_TOKEN_STRING_WITH_FEED = "1 \n 2,3";
+	
 	// Calculator object
 	private Calculator calculator;
 
@@ -45,5 +47,12 @@ public class CalculatorTest {
 		int res = calculator.add(MULTI_TOKEN_STRING);
 		assertEquals(6, res);
 	}
-	//for francois
+	
+	//multi token with line feed
+//	@Test
+//	public void testMultiTokenStringWithLineFeed() {
+//		int res = calculator.add(MULTI_TOKEN_STRING_WITH_FEED);
+//		assertEquals(6, res);
+//	}
+	
 }
