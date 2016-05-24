@@ -26,6 +26,9 @@ public class Calculator {
 
 				while (stringTokenizer.hasMoreElements()) {
 					curentNumber = Integer.parseInt(stringTokenizer.nextToken());
+					if(curentNumber > 1000){
+						continue;
+					}
 					if(curentNumber < 0){
 						result =-1;
 						break;

@@ -17,7 +17,8 @@ public class CalculatorTest {
 	private static final String MULTI_TOKEN_STRING_WITH_FEED = "1\n2,3";
 	private static final String MULTI_TOKEN_STRING_WITH_CUSTOM_DELIMITER = "//;\n1;2;3";
 	private static final String MULTI_TOKEN_STRING_WITH_NEGATIVE_NUMBER = "//;\n1;-2;3";
-	
+	private static final String MULTI_TOKEN_STRING_WITH_NUMBER_GREATER_THAN_1000 = "1,1002,3";
+
 	// Calculator object
 	private Calculator calculator;
 
@@ -74,5 +75,12 @@ public class CalculatorTest {
 	public void testMultiTokenStringWithNegativeNumber() {
 		int res = calculator.add(MULTI_TOKEN_STRING_WITH_NEGATIVE_NUMBER);
 		assertEquals(-1, res);
+	}
+	
+	//multi token with numbers greater than 1000
+	@Test
+	public void testMultiTokenStringWithNumberGreaterThan1000() {
+		int res = calculator.add(MULTI_TOKEN_STRING_WITH_NUMBER_GREATER_THAN_1000);
+		assertEquals(4, res);
 	}
 }
