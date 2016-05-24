@@ -1,9 +1,10 @@
+package Calculator;
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-package Calculator;
 
 public class CalculatorTest {
 	// Constants to pass to add()
