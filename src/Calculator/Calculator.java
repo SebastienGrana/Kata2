@@ -8,8 +8,9 @@ public class Calculator {
 		int result = 0;
 		char customDelimiter;
 		String delimiter = "\n,//";
+		int curentNumber;
 		if (!numbers.isEmpty()) {
-
+			
 			// single number
 			if (numbers.length() == 1) {
 				result = Integer.parseInt(numbers);
@@ -24,11 +25,15 @@ public class Calculator {
 				StringTokenizer stringTokenizer = new StringTokenizer(numbers, delimiter);
 
 				while (stringTokenizer.hasMoreElements()) {
-					result += Integer.parseInt(stringTokenizer.nextToken());
+					curentNumber = Integer.parseInt(stringTokenizer.nextToken());
+					if(curentNumber < 0){
+						result =-1;
+						break;
+					}
+					result += curentNumber;
 				}
-			}
+			}		
 		}
-
 		return result;
 	}
 }
