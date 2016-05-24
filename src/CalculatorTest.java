@@ -45,4 +45,5 @@ public class CalculatorTest {
 		int res = calculator.add(MULTI_TOKEN_STRING);
 		assertEquals(6, res);
 	}
+	//for francois
 }
